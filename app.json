@@ -27,6 +27,22 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Roboto-Black.ttf",
+            "./assets/fonts/Roboto-Bold.ttf",
+            "./assets/fonts/Roboto-Light.ttf",
+            "./assets/fonts/Roboto-Medium.ttf",
+            "./assets/fonts/Inter_18pt-Black.ttf",
+            "./assets/fonts/Inter_18pt-Bold.ttf",
+            "./assets/fonts/Inter_18pt-Light.ttf",
+            "./assets/fonts/Inter_18pt-Medium.ttf",
+            "./assets/fonts/Inter_18pt-Regular.ttf"
+          ]
+        }
+      ],
       "expo-router"
     ],
     "experiments": {
