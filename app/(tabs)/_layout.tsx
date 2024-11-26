@@ -1,8 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import { router, Tabs } from "expo-router";
 import TabBar from "@/components/TabBar";
+import {AddTestLists} from "@/components/JsonHelper";
 
 export default function TabsLayout() {
+
+  const [isInitialized, setIsInitialized] = useState<boolean>(false);
+
+  // Load test lists on app startup
+  if (!isInitialized) {
+    AddTestLists().then(() => console.log("Test lists loaded."));
+    setIsInitialized(true);
+  }
+
   return (
     // Custom TabBar component for styling.
     <Tabs tabBar={(props) => <TabBar {...props} />}>
