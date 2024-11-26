@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { ListIndex, TaskList } from "@/components/types";
-import { Alert } from "react-native";
+import {Category, ListIndex, TaskList} from "@/components/types";
+import {Alert} from "react-native";
 
 export const StoreTaskList = async (taskList: TaskList) => {
   const fileKey = taskList.title;
@@ -92,6 +92,53 @@ export const LoadIndex = async (): Promise<ListIndex[]> => {
   }
 };
 
+export const AddTestLists = async () => {
+  const testLists: TaskList[] = [
+    {
+      title: "Grocery List",
+      category: Category.Food,
+      tasks: [
+        { title: "Milk", description: "GIVE HIM SOME MILK.", completed: false },
+        { title: "Eggs", description: "Egg for bacon bacon?", completed: false },
+        { title: "Bread", description: "Breeeaaad", completed: false },
+      ],
+    },
+    {
+      title: "Workout Plan",
+      category: Category.Sport,
+      tasks: [
+        { title: "Push-ups", description: "", completed: false },
+        { title: "Sit-ups", description: "", completed: false },
+        { title: "Squats",  description: "", completed: false },
+      ],
+    },
+    {
+      title: "Travel Checklist",
+      category: Category.Travel,
+      tasks: [
+        { title: "Passport", description: "", completed: false },
+        { title: "Tickets", description: "", completed: false },
+        { title: "Money", description: "", completed: false },
+      ],
+    },
+    {
+      title: "Book List",
+      category: Category.Books,
+      tasks: [
+        { title: "The Hobbit", description: "", completed: false },
+        { title: "Harry Potter", description: "", completed: false },
+        { title: "The Alchemist", description: "", completed: false },
+      ],
+    }
+  ];
+
+  try {
+    for (const list of testLists) {
+      await StoreTaskList(list);
+    }
+  } catch (error) {
+  }
+}
 export const AddToIndex = async (taskList: TaskList) => {
   const listIndex: ListIndex = {
     title: taskList.title,
