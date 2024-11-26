@@ -38,9 +38,6 @@ To get started with the Handle/Todo App, follow these steps:
 
 4. **Navigate to the Android or iOS simulator** by utilizing the options 'a' for Android or 'i' for iOS.
    Make sure a simulator is open.
-   ```bash
-    a
-    ```
 
 ## License
 This project is licensed under the MIT License.
